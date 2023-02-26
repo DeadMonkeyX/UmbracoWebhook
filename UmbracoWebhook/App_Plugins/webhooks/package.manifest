@@ -1,0 +1,10 @@
+﻿{
+  "name": "Webhooks",
+  "version": "1.0.0",
+  "allowPackageTelemetry": true,
+  "javascript": [
+    "~/App_Plugins/Webhooks/backoffice/Webhooks/webhooks.dashboard.controller.js",
+    "~/App_Plugins/Webhooks/backoffice/Webhooks/overlays/createOverlay.controller.js"
+  ]
+  
+}

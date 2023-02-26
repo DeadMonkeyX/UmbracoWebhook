@@ -1,0 +1,58 @@
+﻿<div ng-controller="webhookDashboard as vm">
+    <form name="mySectionForm" novalidate>
+
+        <umb-editor-view>
+
+            <umb-editor-header
+                    hide-alias="true"
+                    hide-description="true"
+                    hide-icon="true"
+                    name="vm.page.title"
+                    name-locked="true">
+            </umb-editor-header>
+
+            <umb-editor-container>
+                <umb-control-group>
+                    <umb-button
+                            action="vm.openWebhookCreateOverlay()"
+                            button-style="action"
+                            label="Create"
+                            type="button"
+                    >
+                    </umb-button>    
+                </umb-control-group>
+                
+                <div class="umb-table">
+                    <div class="umb-table-head">
+                        <div class="umb-table-row">
+                            <div class="umb-table-cell"></div>
+                            <div class="umb-table-cell">Url</div>
+                            <div class="umb-table-cell">Content Type Alias</div>
+                            <div class="umb-table-cell"></div>
+                        </div>
+                    </div>
+
+                    <div class="umb-table-body" ng-if="vm.page.loading === false">
+                        <div class="umb-table-row" ng-repeat="webhook in vm.webhookList track by webhook.id">
+                            <div class="umb-table-cell">✔</div>
+                            <div class="umb-table-cell">
+                                {{webhook.url}}
+                            </div>
+
+                            <div class="umb-table-cell">{{webhook.contentTypeAlias}}</div>
+                            <div class="umb-table-cell umb-table-cell--small justify-end">
+                                <umb-button action="vm.DeleteWebhook(webhook)" label="Delete" size="xxs" type="button"></umb-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </umb-editor-container>
+            
+
+        </umb-editor-view>
+
+    </form>
+</div>
+
+
+
